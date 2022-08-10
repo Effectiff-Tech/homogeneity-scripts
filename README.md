@@ -6,3 +6,4 @@ Code in connection with Effectiff's research on evaluating homogeneity among a s
 ## Installation
 
 ## License
+Licensed under the [MIT](LICENSE) License.
