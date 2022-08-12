@@ -10,6 +10,7 @@ pandas
 seaborn
 nltk
 git+https://github.com/tetyanaloskutova/topia.termextract-py3.6-2.0.0.git
+timeout-decorator
 keyphrase-vectorizers
 keybert
 pyate

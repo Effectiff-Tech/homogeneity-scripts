@@ -11,6 +11,8 @@ import os
 from pyate import combo_basic
 import re
 
+nltk.download('stopwords')
+
 # Для извлечения отдельных слов исключаем 1000 самых частотных слов английского языка через стоп-слова
 with open("en1000.txt", encoding="utf-8-sig") as file:
     new_stops = file.read().splitlines()
