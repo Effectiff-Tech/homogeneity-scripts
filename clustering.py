@@ -12,6 +12,7 @@ from sklearn.cluster import KMeans, DBSCAN # clustering algorithms
 from sklearn.decomposition import PCA # dimensionality reduction
 from kneed import KneeLocator
 import matplotlib.pyplot as plt
+%matplotlib inline
 import pandas as pd
 import seaborn as sns
 import re
@@ -130,11 +131,11 @@ def docs_in_clusters(text_data_np):
         if i != -1:
             docs_clus.append((i, df_docs.query(f"Cluster == {i}")[0].values.tolist()))
     for item in docs_clus:
-        dest = path + '\\' + str(item[0])
+        dest = path + '/' + str(item[0])
         if os.path.isdir(dest) == False:
             os.makedirs(dest)
         for d in item[1]:
-            shutil.move(path + "\\" + d + ".txt", dest)            
+            shutil.move(path + "/" + d + ".txt", dest)            
 
 def combinations_with_intersections(only_terms, method):
     selected_sets = []
