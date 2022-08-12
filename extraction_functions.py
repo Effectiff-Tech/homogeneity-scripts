@@ -13,7 +13,7 @@ import re
 
 nltk.download('stopwords')
 
-# Для извлечения отдельных слов исключаем 1000 самых частотных слов английского языка через стоп-слова
+# To extract individual words, we exclude the 1000 most frequent words of the English language through stop words
 with open("en1000.txt", encoding="utf-8-sig") as file:
     new_stops = file.read().splitlines()
 
@@ -97,7 +97,7 @@ def terms_topia(text):
     terms = set()
     total_count = 0
     raw_terms = extractor(Btokenized)
-    # Теперь проверяем термины на стоп-слова
+    # Now checking the terms for stop words
     filtered_terms = [raw_term for raw_term in raw_terms if not any((i in stopset_nltk_punkt) or all(c in stop_characters for c in i) for i in raw_term[0].split())]
     for ex in sorted(filtered_terms, key=lambda x: (x[1], x[2]), reverse=True)[:30]:
         terms.add(ex[0])
@@ -147,7 +147,7 @@ def pyate_combo(text):
     
     terms = set()
     total_count = 0
-    # Теперь проверяем термины на стоп-слова
+    # Now checking the terms for stop words
     filtered_terms = [raw_term for raw_term in raw_terms if not any((i in stopset_nltk_punkt) or all(c in stop_characters for c in i) for i in raw_term.split())]
 
     for combo in filtered_terms[:30]:

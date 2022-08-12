@@ -23,13 +23,12 @@ from extraction_functions import individual_words, coll_likelihood_ratio, coll_p
 path = "clusters"
 os.makedirs(path, exist_ok = True)
 
-all_docs = []
-
 text_data = []
 
 methods = {"indw":individual_words, "liker": coll_likelihood_ratio, "pmi": coll_pmi, "topia": terms_topia, "vbert": vector_keybert, "bigr": clean_bigrams, "combo": pyate_combo}
 
 def txt_export(input_path):
+    all_docs = []
     if os.path.isdir(input_path):
         all_docs = glob.glob(input_path + '/*.txt', recursive=True) + glob.glob(input_path + '/*.docx', recursive=True)
     elif os.path.splitext(input_path)[-1].lower() == ".txt" or os.path.splitext(input_path)[-1].lower() == ".docx":
@@ -98,17 +97,14 @@ def text_clustering(data):
     if args.eps == None:
         eps = findOptimalEps(2, data)
     else:
+        findOptimalEps(2, data)
         eps = args.eps
-
-    #eps = float(input("Input eps "))
 
     dbscan = DBSCAN(eps=eps, min_samples=args.min_number, metric="euclidean")
     dbscan_labels = dbscan.fit_predict(data)
     df_dbscan = pd.DataFrame(data, columns = ['FleschReadingEase', 'LIX', 'DaleChallIndex', 'Char per word', 'Type token ratio'
                                               ])
     df_dbscan["Cluster"] = dbscan_labels
-    #pd.set_option('display.max_columns', 6)
-    #print(df_dbscan)
 
 def cluster_visualization(data):
     # using PCA to reduce the dimenionality to two dimenions (to be able to plot the data with *seaborn*)
@@ -153,8 +149,8 @@ def combinations_with_intersections(only_terms, method):
                 for i in list(pair_comb):
                     inters = i[0].intersection(i[1])
                     if method == "bigr":
-                        # Для подхода через биграммы, когда длина их списка в разных документах может не совпадать,
-                        # используем индекс Жаккара
+                        # When using the bigram approach, the bigram lists may be of different length in different pieces,
+                        # for intersection, Jaccard index is used 
                         if len(inters)/(len(i[0]) + len(i[1]) - len(inters)) > 0.015:
                             good = False
                             break                            
@@ -184,11 +180,17 @@ def combinations_with_term_number(selected_term_sets, method):
                 fpair_comb = combinations(fbig_comb, 2)
                 for fi in list(fpair_comb):
                     if method == "bigr":
-                        # Для подхода через биграммы, общее кол-во терминов считаем для тех, которые встречаются более 1 раза
-                        # Учитываем возможность деления на 0, если нет таких терминов
-                        # Для этого в знаменателе добавляем 1, а предел ставим 2. Логика такая: случай, если в 1-м док-те 1 термин 2 раза, во 2-м нет терминов 2 раза и больше,
-                        # то это еще терпим (2/0+1). Если, например в 1-м 2 термина 2 раза, во 2-м 1 термин 2 раза, то терпим (4/2+1)
-                        # Если в 1-м 2 термина 2 раза, во втором нет терминов 2 раза и больше, то уже плохо (4/0+1)
+                        '''
+                        For the bigram approach, we count the total number of terms for those that occur
+                        more than 1 time. We take into account the possibility of dividing by 0
+                        if there are no such terms. To do this, we add 1 in the denominator,
+                        and set the limit to 2. The logic is as follows: if in the 1st piece 1 term
+                        occurs 2 times, in the 2nd piece no terms occur 2 times or more, then
+                        we still accept it: 2/(0+1) <= 2. If, for example, in the 1st piece 2 terms
+                        occur 2 times, in the 2nd piece 1 term occurs 2 times, then we accept it: 4/(2+1) <= 2.
+                        If in the 1st piece 2 terms occur 2 times, in the 2nd piece no terms
+                        occur 2 times or more, then it’s bad: 4/(0+1) > 2
+                        '''
                         if fi[0][2]/(fi[1][2] + 1) > 2 or fi[1][2]/(fi[0][2] + 1) > 2:
                             good = False
                             break                            
@@ -202,8 +204,9 @@ def combinations_with_term_number(selected_term_sets, method):
 
 def docs_without_common_terms():
     for unit in os.listdir(path):
-        # Берем для обработки по терминам только папки (соответствующие кластерам),
-        # и в которых файлов меньше 10 (иначе перебор сочетаний очень долгий)
+        # We take for further processing by terms only folders (corresponding to clusters)
+        # in which there are less files than the specified max_number limit (default: 10)
+        # (otherwise, the search for combinations may be very long)
         if os.path.isdir(os.path.join(path, unit)):
             if len(os.listdir(os.path.join(path, unit))) > args.max_number:
                 os.rename(os.path.join(path, unit), os.path.join(path, unit) + "-too big")
@@ -250,7 +253,7 @@ def docs_without_common_terms():
                                 
                                 selected_term_sets.append(term_set)
 
-                        # Тут вроде проще, по множествам терминов уже отобрали, можно сочетания из наборов "документ - термины - число терминов" делать  
+                        # Here we  can do combinations from the sets "document - terms - number of terms"
                         further_selected_sets = combinations_with_term_number(selected_term_sets, method)
                         fnum = 0  
                         for further_selected_set in further_selected_sets:
@@ -295,8 +298,6 @@ if __name__ == '__main__':
     txt_export(args.input)
     
     text_data_np = np.array(text_data)
-    
-    #print(text_data_np)
     
     if args.scaler == "min-max":
         scaler = MMS()
