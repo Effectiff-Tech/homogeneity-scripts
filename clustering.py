@@ -12,7 +12,6 @@ from sklearn.cluster import KMeans, DBSCAN # clustering algorithms
 from sklearn.decomposition import PCA # dimensionality reduction
 from kneed import KneeLocator
 import matplotlib.pyplot as plt
-%matplotlib inline
 import pandas as pd
 import seaborn as sns
 import re
