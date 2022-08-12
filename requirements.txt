@@ -1,0 +1,15 @@
+docx2python
+blingfire
+readability
+numpy
+scikit-learn
+kneed
+matplotlib
+matplotlib-inline
+pandas
+seaborn
+nltk
+git+https://github.com/tetyanaloskutova/topia.termextract-py3.6-2.0.0.git
+keyphrase-vectorizers
+keybert
+pyate
