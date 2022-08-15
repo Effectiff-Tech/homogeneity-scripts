@@ -56,7 +56,7 @@ The initially selected terms are also filtered by a list of stop words. A term c
 
 For all extraction methods except the bigrams, a list of **30 terms with the highest scores** is obtained for each piece. Accordingly, the initial clusters are divided into subclusters (with at least 3 documents in each subcluster), in which the share of common terms between any pieces in the subcluster is **less than 20%**.
 
-In case of all suitable bigrams, the number of which may vary from one piece to another, the [Jacquard index](https://en.wikipedia.org/wiki/Jaccard_index) is used. The index limit (two pieces for which this limit is exceeded cannot be in the same subcluster) is set to **0.015**, which, for example, for sets of 100 elements allows an intersection of no more than 2 elements.
+In case of all suitable bigrams, the number of which may vary from one piece to another, the [Jacсard index](https://en.wikipedia.org/wiki/Jaccard_index) is used. The index limit (two pieces for which this limit is exceeded cannot be in the same subcluster) is set to **0.015**, which, for example, for sets of 100 elements allows an intersection of no more than 2 elements.
 
 #### Sub-subclusters with the same term density
 
