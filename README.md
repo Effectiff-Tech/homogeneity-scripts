@@ -11,8 +11,8 @@ Code in connection with Effectiff's research on evaluating homogeneity among a s
 The homogeneity of two or more texts is established on the following principles:
 - The same domain and genre.
 - Similar readability scores based on selected metrics.
-- Closeness in the density (number of occurrences) of specialized terminology.
 - No (very few) overlapping specialized terms.
+- Closeness in the density (number of occurrences) of specialized terminology.
 
 ## Method
 
@@ -52,6 +52,18 @@ Thus, a total of 7 methods of term extraction are used.
 
 The initially selected terms are also filtered by a list of stop words. A term candidate is excluded if at least one of its words is a stop word.
 
+#### Subclusters with minimal shared terms
+
+For all extraction methods except the bigrams, a list of **30 terms with the highest scores** is obtained for each piece. Accordingly, the initial clusters are divided into subclusters (with at least 3 documents in each subcluster), in which the share of common terms between any pieces in the subcluster is **less than 20%**.
+
+In case of all suitable bigrams, the number of which may vary from one piece to another, the [Jacquard index](https://en.wikipedia.org/wiki/Jaccard_index) is used. The index limit (two pieces for which this limit is exceeded cannot be in the same subcluster) is set to **0.015**, which, for example, for sets of 100 elements allows an intersection of no more than 2 elements.
+
+#### Sub-subclusters with the same term density
+
+Further, such sub-clusters are divided into sub-subclusters (at least 3 documents in each sub-subcluster), in which the ratio of the **total number of occurrences** of 30 selected terms is **less than 1.3** for any two pieces in such sub-subcluster. For the bigram method, two pieces are considered close in term density, if the ratio of the **total occurrences of bigrams occurring more than once** does not exceed **2**.
+
+Actually, none of the methods of term extraction is considered optimal, so they are used in combination. For the final experiment, 3 texts were taken from one cluster, for which further subdivision into subclusters and sub-subclusters with respect to terminology did not lead to additional fragmentation for most term extraction methods.
+
 ## Installation
 Clone the project and install the requirements:
 ```
@@ -60,10 +72,41 @@ git clone https://github.com/Effectiff-Tech/homogeneity-scripts.git
 cd homogeneity-scripts && pip install -r requirements.txt
 ```
 ## Usage
+
+To reproduce the results used in the article, run:
+
 ```bash
-python clustering.py -i corpus/bigdata.docx
+python clustering.py --input corpus/bigdata.docx --eps 0.14
 ```
+For illustrative purposes, the script will display, during execution, a plot for determining the optimal eps distance via the kneedle algorithm and print the knee point value: 
+
+![Knee point chart](https://raw.githubusercontent.com/Effectiff-Tech/homogeneity-scripts/main/img/knee.jpg)
+
+```Knee point 0.2812415593714895```
+
+Such value will be used as the default value for DBSCAN clustering, if no specific value is provided in args. In the real experiment, for more fine-grained identification of clusters, an eps value was used that is significantly lower than that calculated by the algorithm.  
+
+Also, a plot with the clustering results after DBSCAN will be shown (using PCA to reduce the dimensionality to two dimensions):
+
+![DBSCAN chart](https://raw.githubusercontent.com/Effectiff-Tech/homogeneity-scripts/main/img/DBSCAN.jpg)
+
+After the script is completed, the ```clusters``` folder is created in the project folder. It has the following structure:
+
+![Cluster structure](https://raw.githubusercontent.com/Effectiff-Tech/homogeneity-scripts/main/img/folders.jpg)
+
+The folders are clusters, subclusters and sub-subclusters. The first digit is the numerical designation of the cluster after DBSCAN, followed by the designation of term extraction method, the numerical designation of the subcluster, and the numerical designation of the sub-subcluster.
+
+The folders at the subcluster level contain a ```term_file.txt``` where the actual terms extracted for the corresponding pieces the by the given method are listed, together with the readability statistics for the pieces.
+
+The clusters with ```-too big``` ending are clusters containing more pieces than are allowed for further subclastering depending on the ```max_number``` argument (for computational reasons, clusters with too many pieces may take too long time for subcluster processing as it involves search for all combinations of the given set of pieces).   
+
+The ```.txt``` files in the root folder correspond to pieces that have not been assigned to any cluster by DBSCAN method.
+
 Note: Run `python clustering.py -h` to see full set of options.
+
+## Google Colab Demo
+
+
 
 ## License
 Licensed under the [MIT](LICENSE) License.
