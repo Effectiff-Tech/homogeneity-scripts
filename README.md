@@ -102,11 +102,28 @@ The clusters with ```-too big``` ending are clusters containing more pieces than
 
 The ```.txt``` files in the root folder correspond to pieces that have not been assigned to any cluster by DBSCAN method.
 
+### User content homogenization
+
+You can use the script to search for homogeneous pieces in your document(s). For that, specify the path to the folder/file containing text(s) to be split in pieces and clustered. The allowed file formats are ```.docx``` and ```.txt```. Example usage:
+
+```bash
+python clustering.py --input <path/to/file/or/folder> --piece 500 --min_number 3 --max_number 10
+```
+
 Note: Run `python clustering.py -h` to see full set of options.
 
 ## Google Colab Demo
 
-
+Quick-start with the [Google Colab Notebook](https://colab.research.google.com/drive/1RkudmYbLqpxhhSsvKGaimhL0NWx9Jt4G?usp=sharing).
 
 ## License
 Licensed under the [MIT](LICENSE) License.
+
+## References
+
+This material was used for preparation of the following article:
+
+_Picking Out the Best MT Model: On the Methodology of Human Evaluation_ (unpublished)
+
+in papers for [AMTA 2022](https://amtaweb.org/amta-2022-announcing-the-1-machine-translation-conference-as-a-hybrid-event/) event.
+
