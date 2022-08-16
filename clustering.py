@@ -98,7 +98,7 @@ def text_clustering(data):
         eps = findOptimalEps(2, data)
     else:
         findOptimalEps(2, data)
-        eps = float(args.eps)
+        eps = args.eps
 
     dbscan = DBSCAN(eps=eps, min_samples=args.min_number, metric="euclidean")
     dbscan_labels = dbscan.fit_predict(data)
@@ -281,7 +281,7 @@ if __name__ == '__main__':
     parser.add_argument('-w', '--words', type=int,
                         help='minimum average word count per sentence in text pieces for clustering', default=6)
 
-    parser.add_argument('-e', '--eps', #type=float,
+    parser.add_argument('-e', '--eps', type=float,
                         help='eps distance for DBSCAN')
     
     parser.add_argument('-m', '--min_number', type=int,
