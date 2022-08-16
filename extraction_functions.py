@@ -8,7 +8,9 @@ from topia.termextract import extract, tag
 from keyphrase_vectorizers import KeyphraseCountVectorizer
 from keybert import KeyBERT
 import os
-from pyate import combo_basic
+#from pyate import combo_basic
+import spacy
+from pyate.term_extraction_pipeline import TermExtractionPipeline
 import re
 
 nltk.download('punkt')
@@ -144,7 +146,11 @@ def clean_bigrams(text):
 def pyate_combo(text):
     Btokenized = text_to_words(text)
     
-    raw_terms = combo_basic(Btokenized, have_single_word=True).sort_values(ascending=False).index.values
+    #raw_terms = combo_basic(Btokenized, have_single_word=True).sort_values(ascending=False).index.values
+    nlp = spacy.load("en_core_web_sm")
+    nlp.add_pipe("combo_basic", config = {"kwargs":{"have_single_word":True}})
+    doc = nlp(Btokenized)
+    raw_terms = doc._.combo_basic.sort_values(ascending=False).index.values
     
     terms = set()
     total_count = 0
