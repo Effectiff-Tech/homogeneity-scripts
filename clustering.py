@@ -21,7 +21,8 @@ import glob
 from extraction_functions import individual_words, coll_likelihood_ratio, coll_pmi, terms_topia, vector_keybert, clean_bigrams, pyate_combo
 
 path = "clusters"
-os.makedirs(path, exist_ok = True)
+shutil.rmtree(path, ignore_errors=True)
+os.makedirs(path)
 
 text_data = []
 
