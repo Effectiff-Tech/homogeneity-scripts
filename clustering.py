@@ -279,16 +279,16 @@ if __name__ == '__main__':
                         help='targeted word count of text pieces for clustering', default=500)
 
     parser.add_argument('-w', '--words', type=int,
-                        help='minimal average word count per sentence in text pieces for clustering', default=6)
+                        help='minimum average word count per sentence in text pieces for clustering', default=6)
 
     parser.add_argument('-e', '--eps', type=float,
                         help='eps distance for DBSCAN')
     
     parser.add_argument('-m', '--min_number', type=int,
-                        help='min number of pieces in cluster', default = 3)    
+                        help='minimum number of pieces in cluster', default = 3)    
     
     parser.add_argument('-x', '--max_number', type=int,
-                        help='max number of pieces in cluster', default = 10)
+                        help='maximum number of pieces in cluster', default = 10)
     
     parser.add_argument('-s', '--scaler', type=str, choices = ["min-max", "z-score"],
                         help='min-max or z-score scaler for normalization. Default: min-max', default = "min-max")

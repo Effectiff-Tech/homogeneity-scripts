@@ -11,6 +11,7 @@ import os
 from pyate import combo_basic
 import re
 
+nltk.download('punkt')
 nltk.download('stopwords')
 
 # To extract individual words, we exclude the 1000 most frequent words of the English language through stop words
