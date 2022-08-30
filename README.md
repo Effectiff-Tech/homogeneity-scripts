@@ -131,5 +131,5 @@ in papers for [AMTA 2022](https://amtaweb.org/amta-2022-announcing-the-1-machine
 
 The text pieces discussed in the article are contained in [/texts](https://github.com/Effectiff-Tech/homogeneity-scripts/tree/main/texts) folder.
 
-Those are three text files containing pieces taken from one cluster, and an ```Excel``` file (```results.xlsx```) with a segment-level results of translation and post-editing and the corresponding values of edit distance and time spent on post-editing.
+Those are 3 text files containing pieces taken from one cluster, and an ```Excel``` file (```results.xlsx```) with a segment-level results of translation and post-editing and the corresponding values of edit distance and time spent on post-editing.
 
