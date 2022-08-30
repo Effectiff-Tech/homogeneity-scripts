@@ -1,0 +1,24 @@
+Apart from individual privacy, big data have revived attention on the issue of ‘group privacy’.
+This notion implies that privacy is not merely a right which should apply to persons, but likewise to social groups.
+As Floridi observes, the value of privacy has been predominantly contrasted with that of (public) security: ‘Two moral duties need to be reconciled: fostering human rights and improving human welfare’.
+He opposes the assumption, however, that the latter would be a political concern regarding the public at large and the former an ethical issue concerning individuals’ rights.
+In the spirit of pragmatist ethics’ anti-dualism, i.e. its suspicion towards dichotomies, Floridi claims that a focus on these two positions of the individual and society overall is too simplistic.
+Such a limited viewpoint ultimately overlooks aspects relevant to broader societal dynamics.
+In consequence, the ethical debate lacks consideration for certain validity claims to normative rightness.
+Not merely individuals, but likewise groups should be considered as holders of privacy rights.
+This, according to Floridi, is increasingly of importance in an era of open and big data, since individuals (especially in their role as consumers) are commonly targeted as group members.
+Balancing privacy and security is closely related to one of the tensions predominantly stressed in public health research and biomedical research more generally: safeguarding individual, civic rights versus public health and wellbeing as a common/public good.
+With regards to genomics research, Hoedemaekers, Gordijn and Pijnenburg emphasise that ‘[a]n appeal to the common good often involves the claim that individual interests must be superseded by the common good.
+This is especially the case when the common good is seriously threatened’.
+To determine when a society may be ‘seriously threatened’ (e.g. by a disease) is however not always as clearly discernible as for instance in the case of epidemics/pandemics: for example, when it comes to preemptive measures such as coerced vaccinations.
+Moreover, the response to a perceived threat depends on the respective understanding of values relevant to the ‘common good’.
+In this sense, conceptualising data as contribution to the common good becomes a crucial factor in justifying their means of collection.
+It is therefore particularly insightful and relevant to address how tech corporations take an interest in demonstrating how ‘their’ big data allow for insights beneficial to societies’ wellbeing – with (public) health being a widely acknowledged factor in this.
+Open Data
+One can observe controversies around the ‘trade off’ between privacy (commonly depicted as an individual right) and security (commonly depicted as a value related to public welfare, public interest and the common good) vividly with regards to governmental surveillance, as well as tech-corporate support of and acquiescence in such practices.
+At the same time, transparency has been mobilised in claims to the normative rightness of big data practices.
+Transparency indicates a high degree of information disclosure.
+It implies openness regarding features and processes: for instance academic, governmental, corporate, or even private practices.
+The notion is commonly linked to accountability.
+With the concept of open data, transparency has been applied to big data as such: ‘Open data is data that can be freely used, re-used and redistributed by anyone – subject only, at most, to the requirement to attribute and share alike.’ .
+The concept applies to data which are comprehensively accessible and technically as well as legally modifiable, allowing for re-use and distribution.

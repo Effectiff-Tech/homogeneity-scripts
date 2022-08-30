@@ -1,0 +1,24 @@
+As I show in the next subchapter, this may conflict on the one hand with corporate data interests and on the other hand raises issues for ensuring individuals’ privacy.
+The last three subchapters depict debates concerning informed consent, (un-)biased data, and corporate data economies.
+It is particularly highlighted how big data’s alleged lack of biases is brought forward in ethical debates concerning the relevance of informed consent.
+In contrast to the common ‘digital positivism’ when referring to big data, I stress the role of algorithmic biases and how these reflect the tech-corporate contexts in which large parts of big data are being created.
+Privacy and Security
+Privacy and security are arguably among the most extensively discussed concerns regarding big data uses.
+As I will show further below, they are a well-established, but misleading dichotomy.
+Privacy denotes individuals’ possibilities for defining and limiting access to personal information.
+This may relate to bodily practices, for example unobserved presence in personal spaces, or to information generated based on individuals’ digital traces.
+Regarding individual privacy, big data critics have emphasised individuals’ (lack of) control and knowledge concerning the personal information collected when using online services.
+This aspect is also closely related to diverging opinions on individuals’ responsibility to protect their privacy, and data collectors’ moral liability for fair service conditions.
+While big data proponents, and corporate service providers in particular, insist that users’ information remains anonymous, critics have raised doubts about the very possibility of anonymising data of such diverse qualities on such a large scale.
+In democratic societies, privacy is considered a civic right.
+The right to privacy is (implicitly or explicitly) anchored in many national constitutions.
+The protection of personal data tends to be considered as an extension of the right to privacy.
+However, the Charter of Fundamental Rights of the European Union treats them separately, with Article 8 focusing on data protection, and respect for private and family life being covered in Article 7.
+More recently established rights, such as the right to be forgotten, as established in Argentina and the EU, are closely related to (although distinct from) the right to privacy.
+In a 2014 ruling, the Court of Justice of the European Union decided that ‘[i]ndividuals have the right – under certain conditions – to ask search engines to remove links with personal information about them’.
+This has been described as a strong signal that ‘privacy is not dead’ and that the EU approach contrasts with US ‘patchwork’ privacy policies.
+Restrictions apply to the right to be forgotten where it conflicts with major public interests.
+This also implies that it ‘[...] will always need to be balanced against other fundamental rights, such as the freedom of expression and of the media’.
+The criticism has been made that this decision is partly left to corporations owning respective search engines, notably to market leader Google.
+Freedom of speech, as well as the right to safety, have been particularly underscored as rights and values countering individual privacy considerations.
+These balancing acts, weighing individual rights against the public interest, are also characteristic of ethical debates concerning public health surveillance.
