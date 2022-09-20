@@ -123,9 +123,9 @@ Licensed under the [MIT](LICENSE) License.
 
 This material was used for preparation of the following article:
 
-_Picking Out the Best MT Model: On the Methodology of Human Evaluation_ (unpublished)
+_Picking Out the Best MT Model: On the Methodology of Human Evaluation_ 
 
-in papers for [AMTA 2022](https://amtaweb.org/amta-2022-announcing-the-1-machine-translation-conference-as-a-hybrid-event/) event.
+in papers for the [AMTA 2022](https://amtaweb.org/amta-2022-announcing-the-1-machine-translation-conference-as-a-hybrid-event/) event. The paper can be found [here](https://aclanthology.org/events/amta-2022/).
 
 ### Discussed results
 
