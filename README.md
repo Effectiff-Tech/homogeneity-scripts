@@ -144,3 +144,4 @@ The text pieces discussed in the article are contained in [/texts](https://githu
 
 Those are 3 text files containing pieces taken from one cluster, and an ```Excel``` file (```results.xlsx```) with a segment-level results of translation and post-editing and the corresponding values of edit distance and time spent on post-editing.
 
+
