@@ -121,12 +121,21 @@ Licensed under the [MIT](LICENSE) License.
 
 ## References
 
-This material was used for preparation of the following article:
+This material was used for preparation of [the following article](https://aclanthology.org/2022.amta-upg.2/):
 
-_Picking Out the Best MT Model: On the Methodology of Human Evaluation_ (unpublished)
-
-in papers for [AMTA 2022](https://amtaweb.org/amta-2022-announcing-the-1-machine-translation-conference-as-a-hybrid-event/) event.
-
+```
+@inproceedings{korotaev-ryabchikov-2022-picking,
+    title = "Picking Out The Best {MT} Model: On The Methodology Of Human Evaluation",
+    author = "Korotaev, Stepan  and  Ryabchikov, Andrey",
+    booktitle = "Proceedings of the 15th Biennial Conference of the Association for Machine Translation in the Americas (Volume 2: Users and Providers Track and Government Track)",
+    month = sep,
+    year = "2022",
+    address = "Orlando, USA",
+    publisher = "Association for Machine Translation in the Americas",
+    url = "https://aclanthology.org/2022.amta-upg.2",
+    pages = "12--23",
+}
+```
 ### Discussed results
 
 The text pieces discussed in the article are contained in [/texts](https://github.com/Effectiff-Tech/homogeneity-scripts/tree/main/texts) folder.
