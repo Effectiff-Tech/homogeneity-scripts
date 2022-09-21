@@ -117,6 +117,7 @@ Note: Run `python clustering.py -h` to see full set of options.
 Quick-start with the [Google Colab Notebook](https://colab.research.google.com/drive/1RkudmYbLqpxhhSsvKGaimhL0NWx9Jt4G?usp=sharing).
 
 ## License
+
 Licensed under the [MIT](LICENSE) License.
 
 ## References
