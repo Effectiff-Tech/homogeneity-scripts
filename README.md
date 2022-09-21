@@ -136,6 +136,7 @@ This material was used for preparation of [the following article](https://aclant
     pages = "12--23",
 }
 ```
+
 ### Discussed results
 
 The text pieces discussed in the article are contained in [/texts](https://github.com/Effectiff-Tech/homogeneity-scripts/tree/main/texts) folder.
