@@ -124,7 +124,6 @@ Licensed under the [MIT](LICENSE) License.
 
 This material was used for preparation of [the following article](https://aclanthology.org/2022.amta-upg.2/):
 
-<<<<<<< HEAD
 ```
 @inproceedings{korotaev-ryabchikov-2022-picking,
     title = "Picking Out The Best {MT} Model: On The Methodology Of Human Evaluation",
@@ -138,11 +137,7 @@ This material was used for preparation of [the following article](https://aclant
     pages = "12--23",
 }
 ```
-=======
-_Picking Out the Best MT Model: On the Methodology of Human Evaluation_ 
 
-in papers for the [AMTA 2022](https://amtaweb.org/amta-2022-announcing-the-1-machine-translation-conference-as-a-hybrid-event/) event. The paper can be found [here](https://aclanthology.org/events/amta-2022/).
->>>>>>> 19c2cf10032c60a863c94741228762fffe523134
 
 ### Discussed results
 
